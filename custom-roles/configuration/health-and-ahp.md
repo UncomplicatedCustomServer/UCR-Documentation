@@ -4,8 +4,8 @@ icon: heart-pulse
 
 # Health and AHP
 
-Having custom **Healt** (HP) and **Artificial Health** (AHP) is an important way to customize even more your Custom Roles.\
-With our powerful product you can decide almost everything about these two behavior.
+Having custom **Health** (HP) and **Artificial Health** (AHP) is an important way to customize your Custom Roles even more.\
+With our powerful product you can decide almost everything about these two behaviors.
 
 ## Health
 
@@ -23,7 +23,7 @@ health:
 **Type:** `int32`&#x20;
 
 The amount of HP that will be given to the player when they first spawn as this Custom Role.\
-If the amount is bigger than the maximum then the maximum will be equal to the amount.
+If the amount is greater than the maximum then the maximum will be equal to the amount.
 
 ### Maximum
 
@@ -55,7 +55,7 @@ ahp:
 
 The amount of AHP given to the player when they first spawn as this Custom Role.\
 \
-**Note:** due to a game limitation, the maximum number of AHP that will be displayed to the player is **75** but this doesn't mean that if you assign 300AHP the player won't have them: the 225 will be just hidden.
+**Note:** due to a game limitation, the maximum number of AHP that will be displayed to the player is **75** but this doesn't mean that if you assign 300AHP the player won't have them: the 225 will just be hidden.
 
 ### Limit
 
@@ -78,15 +78,14 @@ The decay speed of the AHP in AHP/s (so if you put `decay: 2` the player will lo
 **Type:** `float`&#x20;
 
 The efficacy (in percentage where 0% is 0 and 100% is 1) of the AHP.\
-This indicates how much damage does the AHP take instead of the player: for example, if the `efficacy: 0.9` (really high) and a player deal a `50HP` damage to this Custom Role he would receive only `5HP` damage directly and the other `45HP` will be absorbed by the AHP.
+This indicates how much damage does the AHP take instead of the player: for example, if the `efficacy: 0.9` (really high) and a player deal `50HP` of damage to this Custom Role he would receive only `5HP` damage directly and the other `45HP` will be absorbed by the AHP.
 
 ### Sustain
 
 **Configuration element name:** `sustain` \
 **Type:** `float`&#x20;
 
-The time (in seconds) where the AHP won't decay.\
-They'll start decaying as soon as this time ends.
+The time (in seconds) before AHP starts to decay.
 
 ### Persistant
 

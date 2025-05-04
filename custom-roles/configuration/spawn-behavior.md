@@ -36,14 +36,14 @@ spawn_settings:
 A list of vanilla roles that can be replaced by this Custom Role.\
 For example, if you put only `ClassD` then the role will be able to spawn only at the beginning of the round and it would be given only to a Class-D!
 
-This is the easiest way to control which vanilla-roles can became Custom Roles and it's also a powerful tool to choose _when_ a Custom Role can spawn.
+This is the easiest way to control which vanilla-roles can become Custom Roles and it's also a powerful tool to choose _when_ a Custom Role can spawn.
 
 ### Max Players
 
 **Configuration element name:** `max_players` \
 **Type:** `int32`&#x20;
 
-The maximum number of players that can have simultaneously this Custom Role.
+The maximum number of players that can have this Custom Role simultaneously.
 
 ### Min Players
 
@@ -113,7 +113,7 @@ The Custom Role will spawn in one of this Role list random spawn point.
 **Type:** `[]string`&#x20;
 
 A list of Spawn Points where the role will be able to spawn.\
-In order to read more about Spawn Points please visit this page.
+In order to read more about Spawn Points please visit [this page](../../commands/spawnpoint/).
 
 ### Required Permission
 

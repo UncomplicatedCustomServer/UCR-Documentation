@@ -126,7 +126,7 @@ is_friend_of:
 
 the Custom Role won't be able to damage Scientists (nor them will be able to harm the Custom Role).
 
-**Note:** this is just an **ADDICTION** to the game main logic!
+**Note:** this is just an **ADDITION** to the game main logic!
 
 ## Health
 
@@ -251,7 +251,7 @@ _(Yeah now you can have up to 5 grenades but only 1 firearm)_
 
 **This configuration value contains Enum values**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
-Customizing the inventory of a Custom Role might be the most important thing to do and UCR give you a simple -but powerful- tool to achieve that.\
+Customizing the inventory of a Custom Role might be the most important thing to do and UCR gives you a simple -but powerful- tool to achieve that.\
 The **Inventory** configuration value is a simple list of ItemTypes: every item will be added to the player's inventory.
 
 Example:
@@ -286,8 +286,8 @@ custom_items_inventory:
 
 **This configuration value contains Enum values**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
-You can also customize the number of ammos that a Custom Roles has.\
-**Note:** the plugin actually overrides the default number of ammos: for that reason if you don't give ammos to a Custom Role it won't have **any** of them!
+You can also customize the amount of ammo that a Custom Roles has.\
+**Note:** the plugin actually overrides the default amount of ammo: for that reason if you don't give ammo to a Custom Role it won't have **any** of them!
 
 ## Damage Multiplier
 
@@ -305,13 +305,13 @@ For that reason if the value is `1` then nothing will change while if we set the
 
 ## Spawn Settings
 
-The **SpawnSettings** configuration parameter has its own object as it's a main part of the configuration and because of his complexity another page is needed for a better organization.\
+The **SpawnSettings** configuration parameter has its own object as it's a main part of the configuration and because of its complexity another page is needed for a better organization.\
 Please visit this page in order to read more about the Spawn Settings param.
 
 ## Custom Flags
 
 With the `v6.0.0` **Custom Flags** officially became open to the developers and because of that the system changed in a more customizable -but complex- one.\
-The explanation (with the list of built-in Custom Flags) is available in this page.
+The explanation (with the list of built-in Custom Flags) is available at [this page](custom-flags/).
 
 ## Ignore Spawn System
 

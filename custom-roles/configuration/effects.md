@@ -34,7 +34,7 @@ The effect you want to give to the Custom Role.
 **Configuration element name:** `duration` \
 **Type:** `float`&#x20;
 
-The duration, in seconds, of the effect.\
+The duration, in seconds, before the effect is removed from the role.\
 If the duration is `-1` than the effect will last forever unless they remove it with SCP-500.
 
 ### Intensity

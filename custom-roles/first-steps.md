@@ -27,11 +27,11 @@ These files are inside the `.config/EXILED/Configs/UncomplicatedCustomRoles` fol
 
 From `v6.0.0` you _can_ create custom folders inside the `UncomplicatedCustomRoles` main folder and they will be loaded.
 
-UCR since `v3.2.0` as a thing called **port-based loading** that loads certain Custom Roles only if the current port of the server is equal to the given value.\
+UCR since `v3.2.0` has a thing called **port-based loading** that loads certain Custom Roles only if the current port of the server is equal to the given value.\
 These roles have a custom folder inside the main folder and it's name is equal to the name of the server port.\
 For example the roles inside the folder `UncomplicatedCustomRoles/7778` will be loaded **ONLY** if the server is running on the `7778` port and so on.
 
-Because of that **every folder that has as a name an&#x20;**<kbd>**int32**</kbd>**&#x20;WONT BE EVALUATED** as these folders are reserved for the **port-based** loading.
+Because of that **every folder that has as a name an&#x20;**<kbd>**int32**</kbd>**&#x20;WILL NOT be evaluated** as these folders are reserved for the **port-based** loading.
 
 Let's imagine that we start the server on the `8888` port:
 

@@ -20,7 +20,8 @@
   * [Spawn Behavior](custom-roles/configuration/spawn-behavior.md)
   * [Custom Flags](custom-roles/configuration/custom-flags/README.md)
     * [Vanilla Flags](custom-roles/configuration/custom-flags/vanilla-flags.md)
-  * [Troubleshooting](custom-roles/configuration/troubleshooting.md)
+* [Troubleshooting](custom-roles/troubleshooting.md)
+* [Compatibility](custom-roles/compatibility.md)
 
 ## Commands
 
@@ -30,7 +31,20 @@
 * [Role](commands/role.md)
 * [Spawn](commands/spawn.md)
 * [Reload](commands/reload.md)
-* [SpawnPoint](commands/spawnpoint.md)
+* [SpawnPoint](commands/spawnpoint/README.md)
+  * [List](commands/spawnpoint/list.md)
+  * [Create](commands/spawnpoint/create.md)
+  * [Delete](commands/spawnpoint/delete.md)
+  * [Goto](commands/spawnpoint/goto.md)
+  * [Sync](commands/spawnpoint/sync.md)
+  * [Migrate](commands/spawnpoint/migrate.md)
+  * [Download](commands/spawnpoint/download.md)
+* [Percentages](commands/percentages.md)
+* [Errors](commands/errors.md)
+* [Generate](commands/generate.md)
+* [Update](commands/update.md)
+* [Owner](commands/owner.md)
+* [Version](commands/version.md)
 
 ## Syntax Notions
 

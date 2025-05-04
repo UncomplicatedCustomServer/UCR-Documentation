@@ -28,14 +28,14 @@ The formula we use is
 newStaminaRegen = staminaRegen * regen_multiplier
 ```
 
-The higher is the number (from 1) the faster will be the regeneration.
+The greater this number is (from 1) the faster stamina will be regenerated.
 
 ### Usage Multiplier
 
 **Configuration element name:** `usage_multiplier` \
 **Type:** `float`&#x20;
 
-The multiplier for the amount of Stamina that is used like by running.\
+The multiplier for the amount of Stamina that is used while sprinting.\
 The formula is the same used for the [Regeneration Multiplier](stamina.md#regeneration-multiplier) but for the usage.
 
-The higher is the number (from 1) the faster will be the Stamina usage.
+The greater this number is (from 1) the faster stamina will deplete.

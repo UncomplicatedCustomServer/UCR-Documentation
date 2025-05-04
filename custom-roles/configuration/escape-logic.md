@@ -23,7 +23,7 @@ role_after_escape:
 
 The syntax for handling the escape logic is quite complicated but when you'll learn how to use it you'll see that it's very powerful.
 
-As you can see from the example of the YAML every key-value pair represent a different scenario.
+As you can see from the example of the YAML every key-value pair represents a different scenario.
 
 ### Key
 
@@ -72,7 +72,7 @@ InternalRole ClassD
 
 ### Logic
 
-Now that we have bot the **key** and the **value** if we put them together we have a condition=>action group.
+Now that we have both the **key** and the **value** if we put them together we have a condition=>action group.
 
 For example, if we have this configuration:
 

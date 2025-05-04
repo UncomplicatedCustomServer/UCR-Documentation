@@ -49,7 +49,7 @@ The **DoNotTriggerTeslaGates** will disable the Tesla Gate activation for this C
 
 ## DropItemOnDeath
 
-The **DropItemOnDeath** allow you to make the Custom Role drop a specific item when they die.
+The **DropItemOnDeath** allows you to make the Custom Role drop a specific item when they die.
 
 It requires a param named `item` where you have to put the wanted [ItemType](../../../syntax-notions/enums.md#itemtype).
 
@@ -81,12 +81,20 @@ custom_flags:
 
 **Note:** if you need to ban more than a single item you **can add as many ItemBan custom flags as you want!**
 
+```yaml
+custom_flags:
+- ItemBan:
+    item_type: Coin
+- ItemBan:
+    item_type: Radio
+```
+
 ## LifeStealer
 
-The **LifeStealer** Custom Flag will allow the Custom Role to gain a certain number of HP when he deal damage to other players.
+The **LifeStealer** Custom Flag will allow the Custom Role to gain a certain number of HP when they deal damage to other players.
 
 It requires a param named `percentage` who's an `int32` and it represent the percentage of the damage that will be transferred to the Custom Role.\
-For example, if `percentage: 50` and the Custom Role deals a `100HP` damage he will be healed with `50HP`.
+For example, if `percentage: 50` and the Custom Role deals a `100HP` damage they will be healed with `50HP`.
 
 Example of usage:
 
@@ -98,7 +106,7 @@ custom_flags:
 
 ## NotAffectedByAppearance
 
-The **NotAffectedByAppearance** is a simple Custom Flag that will prevent the user from see the "fake" appearance of every other Custom Role and they instead will see their real role.
+The **NotAffectedByAppearance** is a simple Custom Flag that will prevent the user from seeing the "fake" appearance of every other Custom Role and they instead will see their real role.
 
 ## PacifismUntilDamage
 
