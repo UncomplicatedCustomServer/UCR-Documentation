@@ -20,6 +20,17 @@
   * [Spawn Behavior](custom-roles/configuration/spawn-behavior.md)
   * [Custom Flags](custom-roles/configuration/custom-flags/README.md)
     * [Vanilla Flags](custom-roles/configuration/custom-flags/vanilla-flags.md)
+  * [Troubleshooting](custom-roles/configuration/troubleshooting.md)
+
+## Commands
+
+* [List](commands/list.md)
+* [Overview](commands/overview.md)
+* [Info](commands/info.md)
+* [Role](commands/role.md)
+* [Spawn](commands/spawn.md)
+* [Reload](commands/reload.md)
+* [SpawnPoint](commands/spawnpoint.md)
 
 ## Syntax Notions
 
