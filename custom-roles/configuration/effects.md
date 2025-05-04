@@ -23,9 +23,9 @@ As you can see the `effects` config param is an array of Effect objects.
 ### Effect Type
 
 **Configuration element name:** `effect_type` \
-**Type:** [`EffectType`](../../c-notions/enums.md#effecttype)&#x20;
+**Type:** [`EffectType`](../../syntax-notions/enums.md#effecttype)&#x20;
 
-**This configuration value is an Enum**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value is an Enum**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 The effect you want to give to the Custom Role.
 

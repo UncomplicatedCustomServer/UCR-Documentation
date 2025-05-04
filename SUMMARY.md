@@ -18,7 +18,11 @@
   * [Stamina](custom-roles/configuration/stamina.md)
   * [Escape Logic](custom-roles/configuration/escape-logic.md)
   * [Spawn Behavior](custom-roles/configuration/spawn-behavior.md)
+  * [Custom Flags](custom-roles/configuration/custom-flags/README.md)
+    * [Vanilla Flags](custom-roles/configuration/custom-flags/vanilla-flags.md)
 
-## C# Notions
+## Syntax Notions
 
-* [Enums](c-notions/enums.md)
+* [Enums](syntax-notions/enums.md)
+* [Arrays](syntax-notions/arrays.md)
+* [Null](syntax-notions/null.md)

@@ -80,20 +80,20 @@ The Badge color.\
 ## Role
 
 **Configuration element name:** `role` \
-**Type:** [`RoleTypeId`](../../c-notions/enums.md#roletypeid-and-team)&#x20;
+**Type:** [`RoleTypeId`](../../syntax-notions/enums.md#roletypeid-and-team)&#x20;
 
-**This configuration value is an Enum**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value is an Enum**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 The wanted **RoleTypeId** for the Custom Role.
 
 ## Team
 
 **Configuration element name:** `team` \
-**Type:** [`Team`](../../c-notions/enums.md#roletypeid-and-team)&#x20;
+**Type:** [`Team`](../../syntax-notions/enums.md#roletypeid-and-team)&#x20;
 
 **This configuration value is nullable** and if null the player will have the default team of the choosen [Role](configuration-elements.md#role).
 
-**This configuration value is an Enum**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value is an Enum**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 The custom team for a Custom Role.\
 You can create, for example, a `ClassD` that's an `SCPs` or things like that to make the game more interesting.
@@ -101,20 +101,20 @@ You can create, for example, a `ClassD` that's an `SCPs` or things like that to 
 ## Role Appearance
 
 **Configuration element name:** `role_appearance`\
-**Type:** [`RoleTypeId`](../../c-notions/enums.md#roletypeid-and-team)&#x20;
+**Type:** [`RoleTypeId`](../../syntax-notions/enums.md#roletypeid-and-team)&#x20;
 
 **This configuration value is nullable** and if null the player will have the default appearance of the choosen [Role](configuration-elements.md#role).
 
-**This configuration value is an Enum**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value is an Enum**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 If not null the player will be the given [Role](configuration-elements.md#role) but every other player will see him as the given Role Appearance role.
 
 ## Is Friend Of
 
 **Configuration element name:** `is_friend_of`\
-**Type:** [`[]Team`](../../c-notions/enums.md#roletypeid-and-team)
+**Type:** [`[]Team`](../../syntax-notions/enums.md#roletypeid-and-team)
 
-**This configuration value contains Enum values**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value contains Enum values**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 With **Is Friend Of** you can decide which teams can harm (and can be harmed) by this Custom Role.\
 For example, if the Custom Role's role is `ClassD` and is friend of is
@@ -226,9 +226,9 @@ The duration of the spawn hint in seconds.
 ## Custom Inventory Limits
 
 **Configuration element name:** `custom_inventory_limits` \
-**Type:** [`ItemCategory`](../../c-notions/enums.md#itemcategory), `sbyte`&#x20;
+**Type:** [`ItemCategory`](../../syntax-notions/enums.md#itemcategory), `sbyte`&#x20;
 
-**This configuration value contains Enum values**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value contains Enum values**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 A simple Dictionary that allow server owners to edit the default inventory limits value for each Custom Role.\
 For example Class-D have a limit of 3 firearms: with this configuration parameter you can increase or even decrease this value!\
@@ -247,9 +247,9 @@ _(Yeah now you can have up to 5 grenades but only 1 firearm)_
 ## Inventory
 
 **Configuration element name:** `inventory` \
-**Type:** [`[]ItemTypeId`](../../c-notions/enums.md#itemtype)&#x20;
+**Type:** [`[]ItemTypeId`](../../syntax-notions/enums.md#itemtype)&#x20;
 
-**This configuration value contains Enum values**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value contains Enum values**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 Customizing the inventory of a Custom Role might be the most important thing to do and UCR give you a simple -but powerful- tool to achieve that.\
 The **Inventory** configuration value is a simple list of ItemTypes: every item will be added to the player's inventory.
@@ -282,9 +282,9 @@ custom_items_inventory:
 ## Ammo
 
 **Configuration element name:** `ammo` \
-**Type:** [`[]AmmoType`](../../c-notions/enums.md#ammotype)
+**Type:** [`[]AmmoType`](../../syntax-notions/enums.md#ammotype)
 
-**This configuration value contains Enum values**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value contains Enum values**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 You can also customize the number of ammos that a Custom Roles has.\
 **Note:** the plugin actually overrides the default number of ammos: for that reason if you don't give ammos to a Custom Role it won't have **any** of them!

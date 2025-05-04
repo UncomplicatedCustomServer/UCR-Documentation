@@ -29,9 +29,9 @@ spawn_settings:
 ### Can Replace Roles
 
 **Configuration element name:** `can_replace_roles` \
-**Type:** [`[]RoleTypeId`](../../c-notions/enums.md#roletypeid-and-team)
+**Type:** [`[]RoleTypeId`](../../syntax-notions/enums.md#roletypeid-and-team)
 
-**This configuration value contains Enum values**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value contains Enum values**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 A list of vanilla roles that can be replaced by this Custom Role.\
 For example, if you put only `ClassD` then the role will be able to spawn only at the beginning of the round and it would be given only to a Class-D!
@@ -63,9 +63,9 @@ The chance of spawning as this Custom Role (if your vanilla role was in the `can
 ### Spawn
 
 **Configuration element name:** `spawn` \
-**Type:** [`SpawnType`](../../c-notions/enums.md#spawntype)&#x20;
+**Type:** [`SpawnType`](../../syntax-notions/enums.md#spawntype)&#x20;
 
-**This configuration value contains an Enum**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value contains an Enum**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 The spawn mechanism that UCR will use in order to decide where to spawn your Custom Role.\
 Available values:\
@@ -81,9 +81,9 @@ Available values:\
 ### Spawn Zones
 
 **Configuration element name:** `spawn_zones` \
-**Type:** [`[]ZoneType`](../../c-notions/enums.md#zonetype)&#x20;
+**Type:** [`[]ZoneType`](../../syntax-notions/enums.md#zonetype)&#x20;
 
-**This configuration value contains Enum values**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value contains Enum values**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 A list of Zones where the Custom Role will be able to spawn.\
 The spawn room will be chosen randomly.
@@ -91,9 +91,9 @@ The spawn room will be chosen randomly.
 ### Spawn Rooms
 
 **Configuration element name:** `spawn_rooms` \
-**Type:** [`[]RoomType`](../../c-notions/enums.md#roomtype)&#x20;
+**Type:** [`[]RoomType`](../../syntax-notions/enums.md#roomtype)&#x20;
 
-**This configuration value contains Enum values**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value contains Enum values**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 A list of Rooms where the Custom Role will be able to spawn.\
 The spawn room will be chosen randomly between the given values.
@@ -101,9 +101,9 @@ The spawn room will be chosen randomly between the given values.
 ### Spawn Roles
 
 **Configuration element name:** `spawn_roles` \
-**Type:** [`[]RoleTypeId`](../../c-notions/enums.md#roletypeid-and-team)
+**Type:** [`[]RoleTypeId`](../../syntax-notions/enums.md#roletypeid-and-team)
 
-**This configuration value contains Enum values**: please visit the [Enums](../../c-notions/enums.md) page in order to learn more about them!
+**This configuration value contains Enum values**: please visit the [Enums](../../syntax-notions/enums.md) page in order to learn more about them!
 
 The Custom Role will spawn in one of this Role list random spawn point.
 

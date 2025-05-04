@@ -1,5 +1,5 @@
 ---
-icon: rectangle-history
+icon: list-tree
 ---
 
 # Enums

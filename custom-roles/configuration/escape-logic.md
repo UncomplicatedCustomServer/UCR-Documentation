@@ -38,7 +38,7 @@ cuffed by <Group> <Subject>
 ```
 
 There are two available Groups: `InternalTeam` and `CustomRole`.\
-If you put `InternalTeam` you then have to put as the Subject a value of the [Team](../../c-notions/enums.md#roletypeid-and-team) [enum](../../c-notions/enums.md).\
+If you put `InternalTeam` you then have to put as the Subject a value of the [Team](../../syntax-notions/enums.md#roletypeid-and-team) [enum](../../syntax-notions/enums.md).\
 If you instead put `CustomRole` you then have to put as the Subject the Custom Role Id.
 
 Let's see some examples:
@@ -58,7 +58,7 @@ The syntax is really clear:
 ```
 
 There are two available groups: `InternalRole` and `CustomRole`.\
-If you put `InternalRole` you then have to put as the Target a value of the [RoleTypeId](../../c-notions/enums.md#roletypeid-and-team) [enum](../../c-notions/enums.md).\
+If you put `InternalRole` you then have to put as the Target a value of the [RoleTypeId](../../syntax-notions/enums.md#roletypeid-and-team) [enum](../../syntax-notions/enums.md).\
 If you instead put `CustomRole` you then have to put as the Target the Custom Role Id.
 
 For example, if we put `CustomRole 2` and the associated condition is true the player will be spawned as the Custom Role with Id=2 when they escape.
