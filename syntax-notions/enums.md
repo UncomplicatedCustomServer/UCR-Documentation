@@ -228,3 +228,16 @@ Surface
 EzCheckpointHallway
 HczTestRoom
 ```
+
+### CandyKindID
+
+```
+None
+Rainbow
+Yellow
+Purple
+Red
+Green
+Blue
+Pink
+```
