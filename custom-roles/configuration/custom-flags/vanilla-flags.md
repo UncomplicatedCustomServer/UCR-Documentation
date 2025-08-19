@@ -124,19 +124,19 @@ The **SilentWalker** Custom Flag will prevent the Custom Role from making walkin
 
 The **TutorialRagdoll** Custom Flag will spawn a Tutorial role ragdoll when they die instead of their old role ragdoll.
 
-### ColorfulNickname
+## ColorfulNickname
 
 The **ColorfulNickname** will change the color of the nickname of the Custom Role's player(s) inside the player infobox.
 
 It requires a param named `color` which must be one of these colors: [infoarea-colors.md](../../../syntax-notions/infoarea-colors.md "mention")
 
-### ColorfulRaName
+## ColorfulRaName
 
 The **ColorfulRaName** will change the color of the nickname of the Custom Role's player(s) inside the RemoteAdmin player list.
 
 It requires a param named `color` which can be any hex (like `#ff00ff`).
 
-### FullCandyBag
+## FullCandyBag
 
 The **FullCandyBag** will spawn (when the Custom Role spawns) a Candy Bag in the player's inventory with inside how many candies you want.
 
