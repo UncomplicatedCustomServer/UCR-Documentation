@@ -4,7 +4,7 @@ icon: hand-holding-skull
 
 # First steps
 
-With UCR you can create **Custom Roles** for your EXILED server.\
+With UCR you can create **Custom Roles** for your LabApi server.\
 But what's a Custom Role?
 
 ## What's a Custom Role?
@@ -19,7 +19,10 @@ With UCR you can customize almost every aspect of a Custom Role through a simple
 ## Where are the Custom Roles?
 
 Each Custom Role has its personal `.yml` configuration file.\
-These files are inside the `.config/EXILED/Configs/UncomplicatedCustomRoles` folder.
+These files are inside the \
+In Linux: `.config/SCP Secret Laboratory/LabAPI/configs/UncomplicatedCustomRoles/` \
+In Windows: `%AppData%/SCP Secret Laboratory/LabAPI/configs/UncomplicatedCustomRoles/`\
+folder.
 
 **Note:** Every role outside that folder **won't be loaded** as it won't be recognized by the plugin!
 

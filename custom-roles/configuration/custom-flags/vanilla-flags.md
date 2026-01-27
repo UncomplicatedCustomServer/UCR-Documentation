@@ -6,9 +6,39 @@ icon: flag-swallowtail
 
 **UCR** comes with some hard-coded "**Vanilla Custom Flags**" and they are the following ones:
 
+## AmnesiaResistance
+
+The **AmnesiaResistance** flag disallows the player to get **AmnesiaVision** or **AmnesiaItems** effect.
+
+## ColorfulNickname
+
+The **ColorfulNickname** will change the color of the nickname of the Custom Role's player(s) inside the player infobox.
+
+It requires a param named `color` which must be one of these colors: [infoarea-colors.md](../../../syntax-notions/infoarea-colors.md "mention")
+
+## ColorfulRaName
+
+The **ColorfulRaName** will change the color of the nickname of the Custom Role's player(s) inside the RemoteAdmin player list.
+
+It requires a param named `color` which can be any hex (like `#ff00ff`).
+
+## CustomInfoOrder
+
+The **CustomPermissions** flag allows to change the CustomInfo's order to your liking.
+
+Example of usage:
+
+```yaml
+custom_flags:
+- CustomInfoOrder:
+    order: "%custominfo%%nickname%%rolename%"
+```
+
+**Note:** These are the 3 Placeholders: <kbd>%custominfo%</kbd>, <kbd>%nickname%</kbd> and <kbd>%rolename%</kbd>
+
 ## CustomPermissions
 
-The **CustomPermissions** flag allows the player that has the Custom Role to have additional EXILED permissions.
+The **CustomPermissions** flag allows the player that has the Custom Role to have additional LabApi permissions.
 
 Example of usage:
 
@@ -18,8 +48,7 @@ custom_flags:
     permissions: "ucr.spawn, ucr.list"
 ```
 
-**Note:** you can also put a single permission\
-**Note:** the `*` char is NOT supported here!
+**Note:** you can also put a single permission
 
 ## CustomScpAnnouncer
 
@@ -32,7 +61,7 @@ Example of usage:
 ```yaml
 custom_flags:
 - CustomScpAnnouncer:
-    name: '250'
+    name: 'SCP-250'
 ```
 
 This will make the game say "SCP-250".
@@ -65,6 +94,22 @@ custom_flags:
 
 The **DropNothingOnDeath** will destroy every item dropped by the Custom Role when they die.
 
+## FullCandyBag
+
+The **FullCandyBag** will spawn (when the Custom Role spawns) a Candy Bag in the player's inventory with inside how many candies you want.
+
+It requires a param named `candies` who's a [List](../../../commands/list.md) of [`CandyKindIDs`](../../../syntax-notions/enums.md#candykindid) .\
+Example:
+
+```yaml
+custom_flags:
+- FullCandyBag:
+    candies:
+    - Rainbow
+    - Yellow
+    - Blue
+```
+
 ## ItemBan
 
 The **ItemBan** Custom Flag will prevent the Custom Role from picking up a specific [Item](../../../syntax-notions/enums.md#itemtype).
@@ -89,7 +134,23 @@ custom_flags:
     item_type: Radio
 ```
 
-## LifeStealer
+## KeepInventoryOnEscape
+
+The **KeepInventoryOnEscape** flag will allow the player to carry his item through escape.\
+The <kbd>drop</kbd> argument is optional.
+
+Example of usage:
+
+```yaml
+custom_flags:
+- KeepInventoryOnEscape:
+    drop: true
+OR
+custom_flags:
+- KeepInventoryOnEscape
+```
+
+## **LifeStealer**
 
 The **LifeStealer** Custom Flag will allow the Custom Role to gain a certain number of HP when they deal damage to other players.
 
@@ -112,6 +173,22 @@ The **NotAffectedByAppearance** is a simple Custom Flag that will prevent the us
 
 The **PacifismUntilDamage** is a simple Custom Flag that will prevent the user from being damaged as long as he doesn't damage anyone.
 
+## **Schematic**
+
+The **Schematic** Custom Flag will spawn the specified [**ProjectMER**](https://github.com/Michal78900/ProjectMER) schematic and attach it to the player.
+
+[**ProjectMER**](https://github.com/Michal78900/ProjectMER) needed to be install to work with this CustomModule.
+
+It requires a param <kbd>name</kbd>, here you need to set the **Schematics** name.
+
+Example of usage:
+
+```yaml
+custom_flags:
+- Schematic:
+    name: hat
+```
+
 ## SilentAnnouncer
 
 The **SilentAnnouncer** Custom Flag will prevent the game from making the SCP termination announcement for that Custom Role.
@@ -124,30 +201,18 @@ The **SilentWalker** Custom Flag will prevent the Custom Role from making walkin
 
 The **TutorialRagdoll** Custom Flag will spawn a Tutorial role ragdoll when they die instead of their old role ragdoll.
 
-## ColorfulNickname
+## **Wardobe**
 
-The **ColorfulNickname** will change the color of the nickname of the Custom Role's player(s) inside the player infobox.
+The **Wardobe** Custom Flag will spawn the specified [**ProjectMER**](https://github.com/Michal78900/ProjectMER) schematic and attach it using [SLWardobe](https://github.com/ChochoZagorski/SLWardrobe/).
 
-It requires a param named `color` which must be one of these colors: [infoarea-colors.md](../../../syntax-notions/infoarea-colors.md "mention")
+[**ProjectMER**](https://github.com/Michal78900/ProjectMER) and [SLWardobe](https://github.com/ChochoZagorski/SLWardrobe/) needed to be install to work with this CustomModule.
 
-## ColorfulRaName
+It requires a param <kbd>name</kbd>, here you need to set the **Wardobe** name.
 
-The **ColorfulRaName** will change the color of the nickname of the Custom Role's player(s) inside the RemoteAdmin player list.
-
-It requires a param named `color` which can be any hex (like `#ff00ff`).
-
-## FullCandyBag
-
-The **FullCandyBag** will spawn (when the Custom Role spawns) a Candy Bag in the player's inventory with inside how many candies you want.
-
-It requires a param named `candies` who's a [List](../../../commands/list.md) of [`CandyKindIDs`](../../../syntax-notions/enums.md#candykindid) .\
-Example:
+Example of usage:
 
 ```yaml
 custom_flags:
-- FullCandyBag:
-    candies:
-    - Rainbow
-    - Yellow
-    - Blue
+- Wardobe:
+    name: hat
 ```

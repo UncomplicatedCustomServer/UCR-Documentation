@@ -4,9 +4,9 @@ icon: question
 
 # What's UCR
 
-**UCR** or **UncomplicatedCustomRoles** is a free open-source plugin for **EXILED** (SCP:Secret Laboratory) that allow server owners to create **highly-customizable Custom Roles** with a simple YAML configuration.
+**UCR** or **UncomplicatedCustomRoles** is a free open-source plugin for **LabApi** (SCP:Secret Laboratory) that allow server owners to create **highly-customizable Custom Roles** with a simple YAML configuration.
 
-With our powerful tool you have the chance to customize even more your server without having to learn how to develop EXILED plugins nor to pay a developer lots of money!
+With our powerful tool you have the chance to customize even more your server without having to learn how to develop LabApi plugins nor to pay a developer lots of money!
 
 UCR has lots of key features such as:\
 \- **Unlimited number of Custom Roles**\

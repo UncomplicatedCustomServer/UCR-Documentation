@@ -12,7 +12,7 @@ Here you'll be guided on how you should find, handle and fix problems with this 
 It's really easy to do something wrong in a file configuration and the plugin will make sure you'll see it by throwing in the console a **YAML Error** that should look something like this:
 
 ```
-[2025-01-17 18:23:07.434 +01:00] [ERROR] [UncomplicatedCustomRoles] Failed to parse C:\Users\piwnica\AppData\Roaming\EXILED\Configs\UncomplicatedCustomRoles\7777\dfds.yml. YAML Exception: (Line: 48, Col: 7, Idx: 989) - (Line: 48, Col: 8, Idx: 990): Exception during deserialization.
+[2025-01-17 18:23:07.434 +01:00] [ERROR] [UncomplicatedCustomRoles] Failed to parse C:\Users\piwnica\AppData\Roaming\SCP Secret Laboratory\LabAPI\configs\UncomplicatedCustomRoles\7777\dfds.yml. YAML Exception: (Line: 48, Col: 7, Idx: 989) - (Line: 48, Col: 8, Idx: 990): Exception during deserialization.
 ```
 
 These errors **are not a plugin bug** but they are caused by an **error in the YAML syntax of one or more of your Custom Roles**!

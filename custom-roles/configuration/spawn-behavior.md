@@ -118,9 +118,9 @@ In order to read more about Spawn Points please visit [this page](../../commands
 ### Required Permission
 
 **Configuration element name:** `spawn_points` \
-**Type:** `string`&#x20;
+**Type:** `string` or `[]string`
 
-A "custom" EXILED permission that the role **must** have in order to natually spawn as this Custom Role.\
+A "custom" LabApi permission or Base Game permission that the player **must** have in order to natually spawn as this Custom Role.\
 For example if you put `ucr.vip.role1` then the people with these perms will be able to spawn as this Custom Role:\
 \- `*`\
 \- `*.*`\

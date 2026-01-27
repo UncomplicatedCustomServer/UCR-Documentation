@@ -8,14 +8,14 @@ The configuration of a UCR Custom Role is a simple YAML file where you can manag
 
 The following file configuration is the current default one that the plugin generates.
 
-```yaml
+```yml
 id: 1
-name: 'Janitor'
+name: Janitor
 override_role_name: false
-nickname: 'D-%dnumber%'
-custom_info: 'Janitor'
-badge_name: 'Janitor'
-badge_color: 'pumpkin'
+nickname: D-%dnumber%
+custom_info: Janitor
+badge_name: Janitor
+badge_color: pumpkin
 role: ClassD
 team: 
 role_appearance: ClassD
@@ -49,11 +49,12 @@ scale:
   x: 1
   y: 1
   z: 1
-spawn_broadcast: |-
+spawn_broadcast: >-
   You are a <color=orange><b>Janitor</b></color>!
+
   Clean the Light Containment Zone!
 spawn_broadcast_duration: 5
-spawn_hint: 'This hint will be shown when you will spawn as a Janitor!'
+spawn_hint: This hint will be shown when you will spawn as a Janitor!
 spawn_hint_duration: 5
 custom_inventory_limits: {}
 inventory:
@@ -61,7 +62,7 @@ inventory:
 - KeycardJanitor
 custom_items_inventory: []
 ammo:
-  Nato9: 10
+  Ammo9x19: 10
 damage_multiplier: 1
 spawn_settings:
   can_replace_roles:
@@ -72,14 +73,13 @@ spawn_settings:
   spawn: RoomsSpawn
   spawn_zones: []
   spawn_rooms:
-  - LczClassDSpawn
+  - LCZ_ClassDSpawn
   spawn_roles:
   - ClassD
   spawn_points: []
-  required_permission: ''
+  required_permission: []
 custom_flags: 
 ignore_spawn_system: false
-
 ```
 
 In the following document we'll take a look at the main configuration elements and explain them, in order to allow you the best and easiest experience.

@@ -59,7 +59,8 @@ The syntax is really clear:
 
 There are two available groups: `InternalRole` and `CustomRole`.\
 If you put `InternalRole` you then have to put as the Target a value of the [RoleTypeId](../../syntax-notions/enums.md#roletypeid-and-team) [enum](../../syntax-notions/enums.md).\
-If you instead put `CustomRole` you then have to put as the Target the Custom Role Id.
+If you instead put `CustomRole` you then have to put as the Target the Custom Role Id.\
+If you put <kbd>Deny</kbd> you don't need a target. This way you can disallow the escape with that condition.
 
 For example, if we put `CustomRole 2` and the associated condition is true the player will be spawned as the Custom Role with Id=2 when they escape.
 
@@ -68,6 +69,7 @@ Let's see some examples:
 ```
 CustomRole 5
 InternalRole ClassD
+Deny
 ```
 
 ### Logic
@@ -80,11 +82,11 @@ For example, if we have this configuration:
 role_after_escape:
   default: InternalRole Spectator
   cuffed by CustomRole 5: CustomRole 10
-  cuffed by InternalTeam Scientists: CustomRole 9
+  cuffed by InternalTeam Scientists: Deny
   cuffed by CustomRole 1: InternalRole ClassD
 ```
 
 * If we escape **not cuffed** then we will become spectators
 * If we escape **cuffed by Custom Role 5** we'll become Custom Role 10
-* If we escape cuffed by a member of the **Scientists** team we'll become Custom Role 9
+* If we escape cuffed by a member of the **Scientists** team, nothing will happen because we denied it
 * If we escaped **cuffed by Custom Role 1** we'll become Class-Ds
