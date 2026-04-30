@@ -52,3 +52,7 @@
 * [Arrays](syntax-notions/arrays.md)
 * [Null](syntax-notions/null.md)
 * [InfoArea Colors](syntax-notions/infoarea-colors.md)
+
+## Developers
+
+* [Intro](developers/intro.md)
