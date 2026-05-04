@@ -35,6 +35,7 @@ hume_shield:
   maximum: 0
   regeneration_amount: 2
   regeneration_delay: 7.5
+  regeneration_speed: 0
 effects: []
 stamina:
   regen_multiplier: 1

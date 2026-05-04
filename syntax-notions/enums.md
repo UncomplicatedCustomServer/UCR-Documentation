@@ -6,9 +6,9 @@ icon: list-tree
 
 **Enums** are a common type in almost every programming language because they have a special behavior: they can only can take only a finite set of predefined values.
 
-**EXILED** does use enums when talking about roles, rooms, items, ammo and everything that is defined.
+**LabApi** does use enums when talking about roles, rooms, items, ammo and everything that is defined.
 
-Here you'll find every EXILED enum in order to configure your role as best as possible.
+Here you'll find every **LabApi** enum in order to configure your role as best as possible.
 
 ## RoleTypeId and Team
 

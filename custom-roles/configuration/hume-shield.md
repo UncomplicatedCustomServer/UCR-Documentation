@@ -15,6 +15,7 @@ hume_shield:
   maximum: 0
   regeneration_amount: 2
   regeneration_delay: 7.5
+  regeneration_speed: 0
 ```
 
 ### Amount
@@ -47,3 +48,10 @@ The amount of Hume Shield that should be given to the player every second (it's 
 **Type:** `float`&#x20;
 
 The delay, in seconds, from the last damage dealt to the SCP from where they'll start to regenerate Hume Shield again following the [Regeneration Amount](hume-shield.md#regeneration-amount).
+
+## Regeneration Speed
+
+**Configuration element name:** `regeneration_speed` \
+**Type:** `float`&#x20;
+
+The speed of the Hume Shield regeneration in seconds. If you set `0` it will be counted as 1 frame.
