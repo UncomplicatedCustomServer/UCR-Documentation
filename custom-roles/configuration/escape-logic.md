@@ -37,14 +37,16 @@ The plain syntax is:
 cuffed by <Group> <Subject>
 ```
 
-There are two available Groups: `InternalTeam` and `CustomRole`.\
+There are two available Groups: `InternalTeam`, `CustomRole` and `CustomTeam`.\
 If you put `InternalTeam` you then have to put as the Subject a value of the [Team](../../syntax-notions/enums.md#roletypeid-and-team) [enum](../../syntax-notions/enums.md).\
-If you instead put `CustomRole` you then have to put as the Subject the Custom Role Id.
+If you instead put `CustomRole` you then have to put as the Subject the Custom Role Id.\
+If you instead put `CustomTeam` you then have to put as the Subject the Custom Team Id.
 
 Let's see some examples:
 
 ```
 cuffed by InternalTeam Scientists
+cuffed by CustomTeam 4
 cuffed by CustomRole 2
 ```
 
@@ -83,10 +85,12 @@ role_after_escape:
   default: InternalRole Spectator
   cuffed by CustomRole 5: CustomRole 10
   cuffed by InternalTeam Scientists: Deny
+  cuffed by CustomTeam 4: Deny
   cuffed by CustomRole 1: InternalRole ClassD
 ```
 
 * If we escape **not cuffed** then we will become spectators
 * If we escape **cuffed by Custom Role 5** we'll become Custom Role 10
 * If we escape cuffed by a member of the **Scientists** team, nothing will happen because we denied it
+* If we escape cuffed by a member of the **Custom UCT Team 4**, nothing will happen because we denied it
 * If we escaped **cuffed by Custom Role 1** we'll become Class-Ds
