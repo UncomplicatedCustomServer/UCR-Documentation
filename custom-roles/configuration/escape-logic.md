@@ -40,7 +40,7 @@ cuffed by <Group> <Subject>
 There are two available Groups: `InternalTeam`, `CustomRole` and `CustomTeam`.\
 If you put `InternalTeam` you then have to put as the Subject a value of the [Team](../../syntax-notions/enums.md#roletypeid-and-team) [enum](../../syntax-notions/enums.md).\
 If you instead put `CustomRole` you then have to put as the Subject the Custom Role Id.\
-If you instead put `CustomTeam` you then have to put as the Subject the Custom Team Id.
+If you instead put `CustomTeam` you then have to put as the Subject the Custom Team Id or Name.
 
 Let's see some examples:
 

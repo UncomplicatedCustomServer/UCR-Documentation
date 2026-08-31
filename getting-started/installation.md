@@ -6,12 +6,9 @@ icon: down-to-line
 
 UCR is really easy to install as it's an **LabApi** plugin.
 
-In order to install UCR you need to download the `UncomplicatedCustomRoles-LabApi.dll` file from the [UCR latest release](https://github.com/UncomplicatedCustomServer/UncomplicatedCustomRoles/releases/latest) and put the file inside the folder.\
+In order to install UCR you need to download the `UncomplicatedCustomRoles.dll` file from the [UCR latest release](https://github.com/UncomplicatedCustomServer/UncomplicatedCustomRoles/releases/latest) and put the file inside the folder.\
 In Linux: `.config/SCP Secret Laboratory/LabAPI/plugins/global/` \
 In Windows: `%AppData%/SCP Secret Laboratory/LabAPI/plugins/global/`&#x20;
-
-~~You may need to install the UCR's only dependency, **Newtonsoft.Json** and if you need to then download from the~~ [~~UCR latest release~~](https://github.com/UncomplicatedCustomServer/UncomplicatedCustomRoles/releases/latest) ~~the file `Newtonsoft.Json.dll` and put it inside the `.config/EXILED/Plugin/dependencies` folder.~~\
-After <kbd>v9.3.0</kbd> you don't need `Newtonsoft.Json.dll` to run the plugin.
 
 You need to install the UCR's only dependency, you can download **0Harmony** from the [UCR latest release](https://github.com/UncomplicatedCustomServer/UncomplicatedCustomRoles/releases/latest) the file `0Harmony.dll` and put it inside the folder.\
 In Linux: `.config/SCP Secret Laboratory/LabAPI/dependencies/global/` \

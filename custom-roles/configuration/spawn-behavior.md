@@ -16,6 +16,7 @@ spawn_settings:
   max_players: 10
   min_players: 1
   spawn_chance: 60
+  spawn_delay: 0
   spawn: RoomsSpawn
   spawn_zones: []
   spawn_rooms:
@@ -38,6 +39,8 @@ For example, if you put only `ClassD` then the role will be able to spawn only a
 
 This is the easiest way to control which vanilla-roles can become Custom Roles and it's also a powerful tool to choose _when_ a Custom Role can spawn.
 
+When `spawn_delay` is used, this list means something slightly different: it selects the players the Custom Role is handed to once the delay has elapsed. See [Spawn Delay](spawn-behavior.md#spawn-delay).
+
 ### Max Players
 
 **Configuration element name:** `max_players` \
@@ -59,6 +62,68 @@ The minimum number of players that **must be** online in the server in order to 
 
 The chance of spawning as this Custom Role (if your vanilla role was in the `can_replace_roles` list) in percentage (%).\
 `spawn_chance: 60` is a 60% chance of spawning.
+
+### Spawn Delay
+
+**Configuration element name:** `spawn_delay`\
+**Type:** `float`
+
+How many seconds after the round starts the Custom Role is spawned. The default, `0`, keeps the role on the normal spawn evaluation: it replaces one of its `can_replace_roles` the moment that vanilla role spawns.
+
+Any value above `0` takes the role out of the spawning. Instead, UCR waits the configured number of seconds after the round starts and then converts the players who hold one of the roles listed in `can_replace_roles`, up to `max_players`, rolling `spawn_chance` for each role.
+
+Listing `Spectator` in `can_replace_roles` is what makes the role select players from `Spectator` mid-round, rather than taking someone who is already playing:
+
+```yaml
+spawn_settings:
+  can_replace_roles:
+  - Spectator
+  max_players: 4
+  min_players: 1
+  spawn_chance: 100
+  spawn_delay: 180
+  spawn: RoomsSpawn
+  spawn_zones: []
+  spawn_rooms:
+  - LczClassDSpawn
+  spawn_roles:
+  - ClassD
+  spawn_points: []
+  required_permission: ''
+```
+
+Three minutes into the round, one random spectator (as long as at least 4 players are on the server) is spawned as this Custom Role in the Class-D spawn room.
+
+Converting players who are already alive works the same way — list their roles instead:
+
+```yaml
+spawn_settings:
+  can_replace_roles:
+  - Spectator
+  max_players: 3
+  min_players: 1
+  spawn_chance: 100
+  spawn_delay: 180
+  spawn: KeepCurrentPositionSpawn
+  spawn_zones: []
+  spawn_rooms:
+  - LczClassDSpawn
+  spawn_roles:
+  - ClassD
+  spawn_points: []
+  required_permission: ''
+```
+
+Two minutes in, every Class-D still alive has a 25% chance of turning into this Custom Role where they stand, until 3 of them have.
+
+Notes:
+
+* The delay is counted from the moment the round's roles are assigned, and it only fires once per round.
+* `can_replace_roles` is not limited to the roles the instant spawn evaluation supports — any role a player can actually hold works, `Spectator` included.
+* Players who already have a Custom Role are never picked.
+* Nothing is spawned if the round ends before the delay elapses.
+* Roles reloaded with `ucr reload` mid-round are scheduled from the next round onwards.
+* `ucr percentages` lists timer-based roles in their own section, since they are not part of the spawn draw.
 
 ### Spawn
 

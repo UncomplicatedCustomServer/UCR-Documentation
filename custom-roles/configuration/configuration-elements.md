@@ -43,7 +43,7 @@ Whether the [Role Name](configuration-elements.md#role-name) should appear insid
 The nickname that will be assigned to the player when they'll be this Custom Role.\
 You can **put different nicknames** by splitting them with a comma (`,`): if there are multiple nicknames the plugin will randomly choose between one of them.
 
-That function supports also Placeholders(R).
+That function supports also [Placeholders](placeholders.md).
 
 ## Custom Info
 

@@ -14,6 +14,10 @@ The **AmnesiaResistance** flag disallows the player to get **AmnesiaVision** or 
 
 ## ColorfulNickname
 
+{% hint style="danger" %}
+<mark style="color:$danger;">This module is deprecated and will be removed in a future version. Use</mark> [<mark style="color:$danger;">InfoTag</mark>](vanilla-flags.md#infotag) <mark style="color:$danger;">instead.</mark>
+{% endhint %}
+
 The **ColorfulNickname** will change the color of the nickname of the Custom Role's player(s) inside the player infobox.
 
 It requires a param named `color` which must be one of these colors: [infoarea-colors.md](../../../syntax-notions/infoarea-colors.md "mention")
@@ -24,7 +28,11 @@ The **ColorfulRaName** will change the color of the nickname of the Custom Role'
 
 It requires a param named `color` which can be any hex (like `#ff00ff`).
 
-## CustomInfoOrder
+## CustomInfoOrder&#x20;
+
+{% hint style="danger" %}
+<mark style="color:$danger;">This module is deprecated and will be removed in a future version. Use</mark> [<mark style="color:$danger;">InfoTag</mark>](vanilla-flags.md#infotag) <mark style="color:$danger;">instead.</mark>
+{% endhint %}
 
 The **CustomPermissions** flag allows to change the CustomInfo's order to your liking.
 
@@ -68,9 +76,27 @@ custom_flags:
 
 This will make the game say "SCP-250".
 
-## DoNotTriggerScp096
+### CustomTeam
 
-The **DoNotTriggerScp096** Custom Flag will simply allow the Custom Role to directly watch SCP-096 without triggering the rage.
+The **CustomTeam** flag lets you group Custom Roles into an custom team, identified by a string `team` name. Players whose roles carry a `CustomTeam` with the same (case-insensitive) team name are treated as teammates: they **cannot damage, flashbang or otherwise harm each other**, exactly like members of a vanilla team.
+
+It requires a param named `team` which must be a non-empty string.
+
+Example of usage:
+
+```yaml
+custom_flags:
+- CustomTeam:
+    team: SerpentsHand
+```
+
+Any two roles (or the same role reused by multiple players) that set `team: SerpentsHand` are now teammates towards each other. A different role using `team: RapidResponseTeam` is a separate team and can freely fight both the `SerpentsHand` and everyone else.
+
+The `team` is just a label — it is not a real game `Team` value, does not change the base `Team` of the player.
+
+## DoNotTrigger096
+
+The **DoNotTrigger096** Custom Flag will simply allow the Custom Role to directly watch SCP-096 without triggering the rage.
 
 ## DoNotTriggerTeslaGates
 
@@ -111,6 +137,60 @@ custom_flags:
     - Yellow
     - Blue
 ```
+
+## InfoTag
+
+The **InfoTag** flag is a single, unified custom flag that controls **everything** shown on a Custom Role's Custom Info — the order of the parts, each part's colour and bold style, and the MTF unit name. It replaces the older `CustomInfoOrder` and `ColorfulNickname` flags: those still work on their own, but if a role also has an `InfoTag`, the `InfoTag` takes full control of the Custom Info.
+
+The tag is built from four tokens: `%custominfo%`, `%nickname%`, `%rolename%` and `%unitname%`. Two tokens written back-to-back (`%a%%b%`) are placed on separate lines; put a literal space (or any other text) between them to keep them on the same line.
+
+| Token          | Filled from                                                  | Notes                                                                                                                                                                              |
+| -------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `%nickname%`   | the role's `nickname` field                                  | [Placeholders](../placeholders.md) are resolved (e.g. `D-%dnumber%`), then used as both the player's display name and this line. Empty → falls back to the player's real nickname. |
+| `%custominfo%` | the role's `custom_info` field                               | Free text, [placeholders](../placeholders.md) resolved. Empty → the line is skipped entirely.                                                                                      |
+| `%rolename%`   | `name` or the base `role`, depending on `override_role_name` | `override_role_name: true` shows the custom `name` (e.g. `Janitor`). `false` shows the base `role`'s real in-game name (e.g. `Class-D Personnel`).                                 |
+| `%unitname%`   | the game's MTF unit naming                                   | Only applies to `FoundationForces`; rendered with `unit_format` (default `({unit})`). Set `show_unitname: false` to hide it.                                                       |
+
+#### Parameters
+
+* `order` (`string`, default `"%custominfo%%nickname%%rolename% %unitname%"`) — the layout of the four tokens described above.
+* `custominfo_color`, `nickname_color`, `rolename_color`, `unitname_color` (`string`, optional) — per-part colour. Accepts a friendly name (`pink`, `red`, `pumpkin`, `green`, ...) or a hex code; only the 24 colours the game allows on a name tag are valid (same palette used by `badge_color`).
+* `custominfo_bold`, `nickname_bold`, `rolename_bold`, `unitname_bold` (`bool`, default `false`) — bolds that part.
+* `unit_format` (`string`, default `"({unit})"`) — how the MTF unit name is rendered; `{unit}` is replaced with the unit name. Square brackets (`[` `]`) are not allowed.
+* `show_unitname` (`bool`, default `true`) — hides `%unitname%` entirely when `false`.
+* `show_badge` (`bool`, default `true`) — shows/hides the badge/rank line the game renders itself. Its colour is still controlled by the role's `badge_color`, not by `InfoTag`.
+* `show_powerstatus` (`bool`, default `true`) — shows/hides power status line.
+
+Example of usage:
+
+```yaml
+custom_flags:
+- InfoTag:
+    # Layout. Default: "%custominfo%%nickname%%rolename% %unitname%"
+    order: "%rolename% %unitname%%nickname%%custominfo%"
+    # Per-part colours: a name (pink, red, pumpkin, green, ...) or an accepted hex.
+    rolename_color: red
+    nickname_color: green
+    unitname_color: yellow
+    custominfo_color: white
+    # Per-part bold
+    rolename_bold: true
+    nickname_bold: false
+    # MTF unit name rendering ({unit} is the placeholder). Square brackets are not allowed.
+    unit_format: "({unit})"
+    show_unitname: true
+    # Other name-tag elements (can be hidden, not recoloured here):
+    show_badge: true          # the badge (its colour = the role's badge_color)
+    show_powerstatus: true    # the power status line
+```
+
+**Note:** An empty token never leaves a blank line, so parts can be freely reordered or omitted from `order` without leaving gaps.
+
+### Migration from CustomInfoOrder/ColorfulNickname
+
+Roles that still use `CustomInfoOrder`, `ColorfulNickname` or `NoUnitName` are **automatically migrated at load** into an equivalent `InfoTag` (in memory), so they keep working and look exactly the same. Each migrated role logs a warning listing the deprecated flags and prints a ready-to-paste `InfoTag` replacement.
+
+To persist the migration to the role's YAML file, run `ucr update <id>` (or `ucr update all`) — the same command used to upgrade outdated role files. Code-registered roles (no YAML file) are migrated in memory only, and a `reload` re-runs the migration from the original files.
 
 ## ItemBan
 
@@ -170,6 +250,12 @@ custom_flags:
 
 The **NotAffectedByAppearance** is a simple Custom Flag that will prevent the user from seeing the "fake" appearance of every other Custom Role and they instead will see their real role.
 
+## NoUnitName
+
+{% hint style="danger" %}
+<mark style="color:$danger;">This module is deprecated and will be removed in a future version. Use</mark> [<mark style="color:$danger;">InfoTag</mark>](vanilla-flags.md#infotag) <mark style="color:$danger;">instead.</mark>
+{% endhint %}
+
 ## PacifismUntilDamage
 
 The **PacifismUntilDamage** is a simple Custom Flag that will prevent the user from being damaged as long as he doesn't damage anyone.
@@ -222,6 +308,8 @@ custom_flags:
 
 The **CustomKeycard** Custom Flag spawns a fully customized keycard and gives it to the player upon spawn. It supports four distinct keycard visual templates, each with their own configurable parameters such as colors, labels, permissions, and wear state.
 
+The `ItemName`, <kbd>HolderName</kbd> and <kbd>CardLabel</kbd> supports [Placeholders](../placeholders.md).
+
 ***
 
 ### Required parameters
@@ -234,18 +322,7 @@ The **CustomKeycard** Custom Flag spawns a fully customized keycard and gives it
 
 ### Optional parameters
 
-| Parameter          | Type                  | Default          | Description                                                    |
-| ------------------ | --------------------- | ---------------- | -------------------------------------------------------------- |
-| `ItemName`         | `string`              | `Custom Keycard` | The in-game display name of the keycard item.                  |
-| `HolderName`       | `string`              | `Unknown`        | The name printed on the card as the holder.                    |
-| `CardLabel`        | `string`              | _(empty)_        | Secondary label text shown on the card body.                   |
-| `Permissions`      | `DoorPermissionFlags` | `None`           | Door access permissions granted by the keycard.                |
-| `KeycardColor`     | `Color` (hex)         | `#FFFFFF`        | Primary background color of the keycard.                       |
-| `PermissionsColor` | `Color` (hex)         | `#FFFFFF`        | Color of the permissions indicator stripe.                     |
-| `LabelColor`       | `Color` (hex)         | `#FFFFFF`        | Color of the label text.                                       |
-| `WearLevel`        | `byte`                | `0`              | Visual wear/damage level of the card.                          |
-| `SerialLabel`      | `string`              | `000000000000`   | Serial number printed on the card.                             |
-| `RankIndex`        | `int`                 | `0`              | Rank insignia index shown on the card. TaskForce variant only. |
+<table><thead><tr><th width="195">Parameter</th><th width="189">Type</th><th width="177">Default</th><th width="187">Description</th></tr></thead><tbody><tr><td><code>ItemName</code></td><td><code>string</code></td><td><code>Custom Keycard</code></td><td>The in-game display name of the keycard item.</td></tr><tr><td><code>HolderName</code></td><td><code>string</code></td><td><code>Unknown</code></td><td>The name printed on the card as the holder.</td></tr><tr><td><code>CardLabel</code></td><td><code>string</code></td><td><em>(empty)</em></td><td>Secondary label text shown on the card body.</td></tr><tr><td><kbd>ContainmentLevel</kbd></td><td><kbd>int</kbd></td><td>0</td><td>The Containment permission's level.</td></tr><tr><td><kbd>ArmoryLevel</kbd></td><td><kbd>int</kbd></td><td>0</td><td>The Armory permission's level.</td></tr><tr><td><kbd>AdminLevel</kbd></td><td><kbd>int</kbd></td><td>0</td><td>The Admin permission's level.</td></tr><tr><td><code>Permissions</code></td><td><code>DoorPermissionFlags</code></td><td><code>None</code></td><td>Door access permissions granted by the keycard.</td></tr><tr><td><code>KeycardColor</code></td><td><code>Color</code> (hex)</td><td><code>#FFFFFF</code></td><td>Primary background color of the keycard.</td></tr><tr><td><code>PermissionsColor</code></td><td><code>Color</code> (hex)</td><td><code>#FFFFFF</code></td><td>Color of the permissions indicator stripe.</td></tr><tr><td><code>LabelColor</code></td><td><code>Color</code> (hex)</td><td><code>#FFFFFF</code></td><td>Color of the label text.</td></tr><tr><td><code>WearLevel</code></td><td><code>byte</code></td><td><code>0</code></td><td>Visual wear/damage level of the card.</td></tr><tr><td><code>SerialLabel</code></td><td><code>string</code></td><td><code>000000000000</code></td><td>Serial number printed on the card.</td></tr><tr><td><code>RankIndex</code></td><td><code>int</code></td><td><code>0</code></td><td>Rank insignia index shown on the card. TaskForce variant only.</td></tr></tbody></table>
 
 ***
 

@@ -18,6 +18,7 @@
   * [Stamina](custom-roles/configuration/stamina.md)
   * [Escape Logic](custom-roles/configuration/escape-logic.md)
   * [Spawn Behavior](custom-roles/configuration/spawn-behavior.md)
+  * [Placeholders](custom-roles/configuration/placeholders.md)
   * [Custom Flags](custom-roles/configuration/custom-flags/README.md)
     * [Vanilla Flags](custom-roles/configuration/custom-flags/vanilla-flags.md)
 * [Troubleshooting](custom-roles/troubleshooting.md)
